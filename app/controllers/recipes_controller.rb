@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   def index
-    @recipies = Recipe.all.order("create_at DESC")
+    @recipies = Recipe.all.order("created_at DESC")
   end
 
    def show
@@ -19,6 +19,14 @@ class RecipesController < ApplicationController
     else
       render 'new'
     end
+   end
+
+   def edit
+     
+   end
+
+   def update
+     
    end
 
    def destroy

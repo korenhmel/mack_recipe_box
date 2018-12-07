@@ -1,4 +1,5 @@
 %h2 This is the placeholder for the Recepies#Index
- -@recipies.each do |recipe|
-%h2= link to recipe.title, recipe
+-@recipies.each do |recipe|
+  %h2= link_to recipe.title, recipe
 
+= link_to "back", root_path
