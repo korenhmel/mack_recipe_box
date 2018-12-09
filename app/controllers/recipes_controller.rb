@@ -26,10 +26,16 @@ class RecipesController < ApplicationController
    end
 
    def update
-     
+     if @recipe.update(recipe_params)
+      redirect_to @recipe
+     else 
+      render "new"
+     end
    end
 
    def destroy
+    @recipe.destroy
+    redirect_to recipes_path, notice: "Succesfully deleted recipe"
    end
 
    private
@@ -38,7 +44,7 @@ class RecipesController < ApplicationController
    end
 
    def recipe_params
-    params.require(:recipe).permit(:title, :description, :user_id)
+    params.require(:recipe).permit(:title, :description)
    end
 
 end
