@@ -14,4 +14,12 @@
   = f.input :description, input_html: {class: "form-control"}
   = f.input :image, input_html: {class: "form-control"}
   %br
+  .row
+   .col-md-6
+    %h3 Ingredients
+    #ingredients
+     = f.simple_fields_for :ingredients do |ingredient|
+      = render 'ingredients_fields', f: ingredient
+     .links
+      = link_to_add_association 'Add Ingredient', f, :ingredients, class: "btn btn-default add-button"
   = f.button :submit, class: "btn btn-primary"
