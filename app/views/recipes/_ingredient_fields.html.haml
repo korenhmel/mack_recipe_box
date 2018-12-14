@@ -1,6 +1,7 @@
-.form-inline.clearfix
+.form-inline
  .nested-fields
-  = f.input :name , input_html: { class: "form-iput form-control"}
-  %br/
-  = link_to_remove_association "Remove", f, class: "btn btn-default"
+  .form-group
+   = f.input :name , input_html: { class: "form-iput form-control"}
+  .form-group
+   = link_to_remove_association "Remove", f, class: "btn btn-default"
     
